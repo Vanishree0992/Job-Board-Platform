@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Analytics{% endblock %}
+{% block content %}
+<h2>Analytics Dashboard</h2>
+<p>Total Jobs Posted: {{ jobs|length }}</p>
+<p>Total Applications Received: {{ total_apps }}</p>
+<div class="mt-4">
+  <h4>Applications per Job</h4>
+  <ul class="list-group">
+    {% for job in jobs %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ job.title }}
+        <span class="badge bg-primary rounded-pill">{{ job.applications|length }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

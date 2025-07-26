@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Pricing Plans{% endblock %}
+{% block content %}
+<h2>Pricing Plans</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for plan in plans %}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ plan.name }}</h5>
+        <p class="card-text">{{ plan.features }}</p>
+        <p class="display-6">${{ plan.price }}</p>
+        <a href="#" class="btn btn-outline-primary">Select Plan</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
